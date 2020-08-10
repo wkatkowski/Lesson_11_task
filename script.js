@@ -60,12 +60,12 @@
 // alert(5 > 4); //true
 // alert("ананас" > "яблоко"); //false
 // alert("2" > "12"); //true
-// alert(undefined == null); //true
+// alert(undefined === null); //true
 // alert(undefined === null); //false
-// alert(null == "\n0\n"); //false
+// alert(null === "\n0\n"); //false
 // alert(null === +"\n0\n"); //false
 
-// let name = prompt("What is your name?");
+// const name = prompt("What is your name?");
 // alert(name);
 
 
@@ -73,14 +73,14 @@
 //     alert( 'Привет' ); //да
 //   }
 
-// let company = prompt('Какое «официальное» название JavaScript?');
-//   if (company == 'ECMAScript') {
+// const company = prompt('Какое «официальное» название JavaScript?');
+//   if (company === 'ECMAScript') {
 //     alert('Правильно!');
 //   } else {
 //     alert('Неправильно. "ECMAScript"!');
 //   }
 
-// let number = prompt('Назовите число');
+// const number = prompt('Назовите число');
 
 //   if (number > 0) {
 //     alert(1);
@@ -104,15 +104,15 @@
 // alert(result);
 
 
-// let login = prompt('Назовите логин');
+// const login = prompt('Назовите логин');
 
 // let message;
 
-// if (login == 'Сотрудник') {
+// if (login === 'Сотрудник') {
 //   message = 'Привет';
-// } else if (login == 'Директор') {
+// } else if (login === 'Директор') {
 //   message = 'Здравствуйте';
-// } else if (login == '') {
+// } else if (login === '') {
 //   message = 'Нет логина';
 // } else {
 //   message = '';
@@ -142,22 +142,159 @@
 
 
 
-let login = prompt("Кто там?");
+// const login = prompt("Кто там?");
 
-if (login == 'Админ') {
+// if (login === 'Админ') {
 
-  let pass = prompt('Пароль?', '');
+//   const pass = prompt('Пароль?', '');
 
-  if (pass == 'Я главный') {
-    alert( 'Здравствуйте!' );
-  } else if (pass == '' || pass == null) {
-    alert( 'Отменено' );
-  } else {
-    alert( 'Неверный пароль' );
+//   if (pass === 'Я главный') {
+//     alert( 'Здравствуйте!' );
+//   } else if (pass === '' || pass === null) {
+//     alert( 'Отменено' );
+//   } else {
+//     alert( 'Неверный пароль' );
+//   }
+
+// } else if (login === '' || login === null) {
+//   alert( 'Отменено' );
+// } else {
+//   alert( "Я вас не знаю" );
+// }
+
+
+// let i = 3;
+
+// while (i) {
+//   alert( i-- );
+// } //3 2 1
+
+
+// let i = 0;
+// while (++i < 5) alert( i ); //1 2 3 4
+
+// let i = 0;
+// while (i++ < 5) alert( i ); //1 2 3 4 5
+
+
+// for (let i = 0; i < 5; ++i) alert( i ); //0 1 2 3 4
+// for (let i = 0; i < 5; i++) alert( i ); //0 1 2 3 4
+
+
+// for (let i = 2; i <= 10; i++) {
+//     if (i % 2 === 0) {
+//       alert( i );
+//     }
+//   }
+
+
+// let i = 0;
+// while (i < 3) {
+//   alert( `number ${i}!` );
+//   i++;
+// }
+
+
+// let num;
+
+// do {
+//   num = prompt("Введите число, большее 100?");
+// } while (num <= 100);
+
+
+// let n = 10;
+
+// nextPrime:
+// for (let i = 2; i <= n; i++) { 
+
+//   for (let j = 2; j < i; j++) { 
+//     if (i % j === 0) continue nextPrime;
+//   }
+
+//   alert( i );
+// }
+
+
+// let browser = prompt('You browser?')
+
+// if(browser === 'Edge') {
+//     alert("You've got the Edge!");
+//   } else if (browser === 'Chrome'
+//    || browser === 'Firefox'
+//    || browser === 'Safari'
+//    || browser === 'Opera') {
+//     alert( 'Okay we support these browsers too' );
+//   } else {
+//     alert( 'We hope that this page looks ok!' );
+//   }
+
+
+// const number = +prompt('Введите число между 0 и 3', '');
+
+// switch (number) {
+//     case 0:
+//     alert('Вы ввели число 0');
+//     break;
+
+//     case 1:
+//     alert('Вы ввели число 1');
+//     break;
+
+//     case 2: 
+//     case 3:
+//     alert('Вы ввели число 2, а может и 3');
+//     break;
+
+//     default:
+//     alert( 'Вы ввели что-то другое' );
+// }
+
+
+//   function checkAge(age) {
+//     return (age > 18) ? true : confirm('Родители разрешили?');
+//   }
+
+//   function checkAge(age) {
+//     return (age > 18) || confirm('Родители разрешили?');
+//   }
+
+
+// function min(a, b) {
+//     if (a < b) {
+//       return a;
+//     } else {
+//       return b;
+//     }
+//   }
+
+
+// function pow(x, n) {
+//     let result = x;
+  
+//     for (let i = 1; i < n; i++) {
+//       result *= x;
+//     }
+  
+//     return result;
+//   }
+  
+//   let x = prompt("x?", '');
+//   let n = prompt("n?", '');
+  
+//   if (n < 1) {
+//     alert(`Степень ${n} не поддерживается, используйте натуральное число`);
+//   } else {
+//     alert( pow(x, n) );
+//   }
+
+
+function ask(question, yes, no) {
+    if (confirm(question)) yes()
+    else no();
   }
-
-} else if (login == '' || login == null) {
-  alert( 'Отменено' );
-} else {
-  alert( "Я вас не знаю" );
-}
+  
+  ask(
+    "Вы согласны?",
+    () => alert("Вы согласились."),
+    () => alert("Вы отменили выполнение.")
+  );
